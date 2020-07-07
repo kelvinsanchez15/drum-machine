@@ -1,0 +1,2 @@
+body{margin:0}.App{background-color:#2f4f4f;display:flex;justify-content:center;align-items:center;height:100vh}#drum-machine{background-color:#302f2e;border:1px solid #000;height:500px;max-width:450px;text-align:center;padding:0 10px}#drum-machine h1{color:#fff}#drum-pads-container{background-color:rgba(100,148,237,0);border-radius:7px;display:flex;flex-wrap:wrap;justify-content:center}.drum-pad{background-color:#fff;border-radius:7px;flex:0 1 31%;margin:2px;height:80px;width:80px}
+/*# sourceMappingURL=main.013da5b8.chunk.css.map */
