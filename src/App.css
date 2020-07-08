@@ -7,16 +7,15 @@
 }
 
 #drum-machine {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   background-color: rgb(48, 47, 46);
   border: 1px solid black;
   height: 500px;
   max-width: 450px;
   text-align: center;
-  padding: 0 10px;
-}
-
-#drum-machine h1 {
-  color: white;
+  padding: 10px 10px;
 }
 
 #drum-pads-container {
@@ -42,14 +41,15 @@
 }
 
 #ui-container {
-  background-color: thistle;
+  /* background-color: thistle; */
+  color: white;
   display: flex;
   justify-content: space-around;
   height: 150px;
 }
 
 #title {
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
   width: 33%;
   display: flex;
   justify-content: center;
@@ -57,18 +57,55 @@
 }
 
 #display {
-  background-color: turquoise;
+  background-color: rgb(53, 157, 255);
+  color: black;
   width: 33%;
-  color: azure;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .status {
-  background-color: coral;
+  /* background-color: coral; */
   display: flex;
   justify-content: space-around;
 }
 
-#inputs {
-  background-color: burlywood;
+#controls {
+  /* background-color: burlywood; */
   width: 33%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.controls-volume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider-wrapper input {
+  width: 40px;
+  height: 100px;
+  -webkit-appearance: none;
+  -webkit-appearance: slider-vertical;
+}
+
+.controls-power {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  background-color: black;
+  width: 50px;
+  height: 20px;
+}
+
+.btn-inner {
+  background-color: brown;
+  height: 20px;
+  width: 25px;
+  float: right;
 }

@@ -81,7 +81,36 @@ export default function App() {
   return (
     <div className="App">
       <div id="drum-machine">
-        <h1>Drum Machine</h1>
+        <div id="ui-container">
+          <div id="title">Drum machine</div>
+          <div id="display">
+            {display}
+            <div className="status">
+              <span>{power ? "ON" : "OFF"}</span>
+              <span>vol: {volume}</span>
+            </div>
+          </div>
+          <div id="controls">
+            <div className="controls-volume">
+              <div className="slider-wrapper">
+                <input
+                  id="volume"
+                  type="range"
+                  orient="vertical"
+                  defaultValue={volume}
+                  onChange={changeHangler}
+                ></input>
+              </div>
+              <div>Vol</div>
+            </div>
+            <div className="controls-power">
+              <div className="btn" onClick={() => setPower(!power)}>
+                <div className="btn-inner"></div>
+              </div>
+              <div>Power</div>
+            </div>
+          </div>
+        </div>
         <div id="drum-pads-container">
           {bank.map((item) => (
             <Pad
@@ -96,25 +125,6 @@ export default function App() {
               volumeControl={volume}
             />
           ))}
-        </div>
-        <div id="ui-container">
-          <div id="title">Drum machine</div>
-          <div id="display">
-            {display}
-            <div className="status">
-              <span>{power ? "ON" : "OFF"}</span>
-              <span>vol: {volume}</span>
-            </div>
-          </div>
-          <div id="inputs">
-            <div onClick={() => setPower(!power)}>Pwr Btn</div>
-            <input
-              id="volume"
-              type="range"
-              defaultValue={volume}
-              onChange={changeHangler}
-            ></input>
-          </div>
         </div>
       </div>
     </div>
