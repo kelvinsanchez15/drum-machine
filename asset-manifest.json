@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/drum-machine/static/css/main.7af59cb7.chunk.css",
-    "main.js": "/drum-machine/static/js/main.4274bd93.chunk.js",
-    "main.js.map": "/drum-machine/static/js/main.4274bd93.chunk.js.map",
+    "main.js": "/drum-machine/static/js/main.ab75c894.chunk.js",
+    "main.js.map": "/drum-machine/static/js/main.ab75c894.chunk.js.map",
     "runtime-main.js": "/drum-machine/static/js/runtime-main.49a0ba3c.js",
     "runtime-main.js.map": "/drum-machine/static/js/runtime-main.49a0ba3c.js.map",
     "static/js/2.e1e6bbb0.chunk.js": "/drum-machine/static/js/2.e1e6bbb0.chunk.js",
     "static/js/2.e1e6bbb0.chunk.js.map": "/drum-machine/static/js/2.e1e6bbb0.chunk.js.map",
     "index.html": "/drum-machine/index.html",
-    "precache-manifest.9a776a0f10d420e208383b39e881a81d.js": "/drum-machine/precache-manifest.9a776a0f10d420e208383b39e881a81d.js",
+    "precache-manifest.038b01db5bae1b26723af11f18e7f9b9.js": "/drum-machine/precache-manifest.038b01db5bae1b26723af11f18e7f9b9.js",
     "service-worker.js": "/drum-machine/service-worker.js",
     "static/css/main.7af59cb7.chunk.css.map": "/drum-machine/static/css/main.7af59cb7.chunk.css.map",
     "static/js/2.e1e6bbb0.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.e1e6bbb0.chunk.js.LICENSE.txt",
-    "static/media/Closed-HH.wav": "/drum-machine/static/media/Closed-HH.9826cea3.wav",
-    "static/media/Crash-Cymbal.wav": "/drum-machine/static/media/Crash-Cymbal.f9fe8e7a.wav",
-    "static/media/High-Tom.wav": "/drum-machine/static/media/High-Tom.d2b729aa.wav",
-    "static/media/Kick.wav": "/drum-machine/static/media/Kick.03b7694a.wav",
-    "static/media/Low-Tom.wav": "/drum-machine/static/media/Low-Tom.dccc918a.wav",
-    "static/media/Mid-Tom.wav": "/drum-machine/static/media/Mid-Tom.ce9dd0c2.wav",
-    "static/media/Open-HH.wav": "/drum-machine/static/media/Open-HH.bbadfeea.wav",
-    "static/media/Ride-Cymbal.wav": "/drum-machine/static/media/Ride-Cymbal.a6e2899f.wav",
-    "static/media/Snare.wav": "/drum-machine/static/media/Snare.a5c53ec0.wav"
+    "static/media/Closed-HH.mp3": "/drum-machine/static/media/Closed-HH.58f51fd4.mp3",
+    "static/media/Crash-Cymbal.mp3": "/drum-machine/static/media/Crash-Cymbal.83ab3994.mp3",
+    "static/media/High-Tom.mp3": "/drum-machine/static/media/High-Tom.57ce0828.mp3",
+    "static/media/Kick.mp3": "/drum-machine/static/media/Kick.c9ee3842.mp3",
+    "static/media/Low-Tom.mp3": "/drum-machine/static/media/Low-Tom.678c4a0a.mp3",
+    "static/media/Mid-Tom.mp3": "/drum-machine/static/media/Mid-Tom.4b05f687.mp3",
+    "static/media/Open-HH.mp3": "/drum-machine/static/media/Open-HH.152dc562.mp3",
+    "static/media/Ride-Cymbal.mp3": "/drum-machine/static/media/Ride-Cymbal.4e97154a.mp3",
+    "static/media/Snare.mp3": "/drum-machine/static/media/Snare.4483a692.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.49a0ba3c.js",
     "static/js/2.e1e6bbb0.chunk.js",
     "static/css/main.7af59cb7.chunk.css",
-    "static/js/main.4274bd93.chunk.js"
+    "static/js/main.ab75c894.chunk.js"
   ]
 }
