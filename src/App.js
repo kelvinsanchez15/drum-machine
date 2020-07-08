@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Pad from "./components/Pad.js";
 import "./App.css";
 // Drumkit library imports
-import openHH from "./sounds/Open-HH.wav";
-import crashCymbal from "./sounds/Crash-Cymbal.wav";
-import rideCymbal from "./sounds/Ride-Cymbal.wav";
-import highTom from "./sounds/High-Tom.wav";
-import midTom from "./sounds/Mid-Tom.wav";
-import lowTom from "./sounds/Low-Tom.wav";
-import closedHH from "./sounds/Closed-HH.wav";
-import kick from "./sounds/Kick.wav";
-import snare from "./sounds/Snare.wav";
+import openHH from "./sounds/Open-HH.mp3";
+import crashCymbal from "./sounds/Crash-Cymbal.mp3";
+import rideCymbal from "./sounds/Ride-Cymbal.mp3";
+import highTom from "./sounds/High-Tom.mp3";
+import midTom from "./sounds/Mid-Tom.mp3";
+import lowTom from "./sounds/Low-Tom.mp3";
+import closedHH from "./sounds/Closed-HH.mp3";
+import kick from "./sounds/Kick.mp3";
+import snare from "./sounds/Snare.mp3";
 
 const bank = [
   {
