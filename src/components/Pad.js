@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 
 export default function Pad(props) {
   const playAudio = () => {
+    // playAudio logic only runs when power is set to true
     if (props.powerControl) {
-      let audio = document.getElementById(props.keyTrigger);
-      audio.play();
+      // Get html audio element with a selector
+      const audio = document.getElementById(props.keyTrigger);
       audio.currentTime = 0;
+      audio.play();
       audio.volume = props.volumeControl / 100;
-      props.onClick(props.padId);
+      // Update display text
+      props.updateDisplay(props.padId);
     }
   };
 

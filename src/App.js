@@ -1,62 +1,71 @@
 import React, { useState } from "react";
 import Pad from "./components/Pad.js";
 import "./App.css";
+// Drumkit library imports
+import openHH from "./sounds/Open-HH.wav";
+import crashCymbal from "./sounds/Crash-Cymbal.wav";
+import rideCymbal from "./sounds/Ride-Cymbal.wav";
+import highTom from "./sounds/High-Tom.wav";
+import midTom from "./sounds/Mid-Tom.wav";
+import lowTom from "./sounds/Low-Tom.wav";
+import closedHH from "./sounds/Closed-HH.wav";
+import kick from "./sounds/Kick.wav";
+import snare from "./sounds/Snare.wav";
 
-const baseUrl = "https://s3.amazonaws.com/freecodecamp/drums/";
 const bank = [
   {
-    id: "Heater-1",
+    id: "Open-HH",
     keyCode: 81,
     keyTrigger: "Q",
-    url: "Heater-1.mp3",
+    src: openHH,
   },
   {
-    id: "Heater-2",
+    id: "Crash-Cymbal",
     keyCode: 87,
     keyTrigger: "W",
-    url: "Heater-2.mp3",
+    src: crashCymbal,
   },
   {
-    id: "Heater-3",
+    id: "Ride-Cymbal",
     keyCode: 69,
     keyTrigger: "E",
-    url: "Heater-3.mp3",
+    src: rideCymbal,
   },
   {
-    id: "Heater-4",
+    id: "High-Tom",
     keyCode: 65,
     keyTrigger: "A",
-    url: "Heater-4_1.mp3",
+    src: highTom,
   },
   {
-    id: "Clap",
+    id: "Mid-Tom",
     keyCode: 83,
     keyTrigger: "S",
-    url: "Heater-6.mp3",
+    src: midTom,
   },
   {
-    id: "Open-HH",
+    id: "Low-Tom",
     keyCode: 68,
     keyTrigger: "D",
-    url: "Dsc_Oh.mp3",
+    src: lowTom,
   },
   {
-    id: "Kick-n'-Hat",
+    id: "Closed-HH",
     keyCode: 90,
     keyTrigger: "Z",
-    url: "Kick_n_Hat.mp3",
+    src: closedHH,
   },
   {
     id: "Kick",
     keyCode: 88,
     keyTrigger: "X",
-    url: "RP4_KICK_1.mp3",
+    src: kick,
   },
   {
-    id: "Closed-HH",
+    id: "Snare",
     keyCode: 67,
     keyTrigger: "C",
-    url: "Cev_H2.mp3",
+    src: snare,
   },
 ];
 
@@ -80,9 +89,9 @@ export default function App() {
               padId={item.id}
               keyCode={item.keyCode}
               keyTrigger={item.keyTrigger}
-              audioSrc={baseUrl + item.url}
+              audioSrc={item.src}
               audioId={item.keyTrigger}
-              onClick={(value) => setDisplay(value)}
+              updateDisplay={(value) => setDisplay(value)}
               powerControl={power}
               volumeControl={volume}
             />
