@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Pad from "./components/Pad.js";
 import "./App.css";
 
 const baseUrl = "https://s3.amazonaws.com/freecodecamp/drums/";
@@ -59,37 +60,14 @@ const bank = [
   },
 ];
 
-function Pad(props) {
-  const playAudio = () => {
-    let audio = document.getElementById(props.keyTrigger);
-    audio.play();
-    audio.currentTime = 0;
-    props.onClick(props.padId);
-  };
-
-  const keyHandler = ({ keyCode }) => {
-    if (keyCode === props.keyCode) {
-      playAudio();
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("keydown", keyHandler);
-    return () => {
-      window.removeEventListener("keydown", keyHandler);
-    };
-  });
-
-  return (
-    <div id={props.padId} className="drum-pad" onClick={playAudio}>
-      <audio id={props.audioId} className="clip" src={props.audioSrc}></audio>
-      {props.keyTrigger}
-    </div>
-  );
-}
-
 export default function App() {
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("Play");
+  const [power, setPower] = useState(true);
+  const [volume, setVolume] = useState(75);
+
+  const changeHangler = (e) => {
+    setVolume(e.target.value);
+  };
 
   return (
     <div className="App">
@@ -105,10 +83,28 @@ export default function App() {
               audioSrc={baseUrl + item.url}
               audioId={item.keyTrigger}
               onClick={(value) => setDisplay(value)}
+              powerControl={power}
+              volumeControl={volume}
             />
           ))}
+        </div>
+        <div id="ui-container">
+          <div id="title">Drum machine</div>
           <div id="display">
-            <h1>{display}</h1>
+            {display}
+            <div className="status">
+              <span>{power ? "ON" : "OFF"}</span>
+              <span>vol: {volume}</span>
+            </div>
+          </div>
+          <div id="inputs">
+            <div onClick={() => setPower(!power)}>Pwr Btn</div>
+            <input
+              id="volume"
+              type="range"
+              defaultValue={volume}
+              onChange={changeHangler}
+            ></input>
           </div>
         </div>
       </div>

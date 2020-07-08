@@ -36,4 +36,39 @@
   margin: 2px;
   height: 80px;
   width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ui-container {
+  background-color: thistle;
+  display: flex;
+  justify-content: space-around;
+  height: 150px;
+}
+
+#title {
+  background-color: blanchedalmond;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#display {
+  background-color: turquoise;
+  width: 33%;
+  color: azure;
+}
+
+.status {
+  background-color: coral;
+  display: flex;
+  justify-content: space-around;
+}
+
+#inputs {
+  background-color: burlywood;
+  width: 33%;
 }
