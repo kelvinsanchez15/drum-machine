@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Pad from "./components/Pad.js";
 import "./App.scss";
+// Components import
+import UserInterface from "./components/UserInterface.js";
+import Pad from "./components/Pad.js";
 // Drumkit library imports
 import openHH from "./sounds/Open-HH.mp3";
 import crashCymbal from "./sounds/Crash-Cymbal.mp3";
@@ -74,7 +76,15 @@ export default function App() {
   const [power, setPower] = useState(true);
   const [volume, setVolume] = useState(75);
 
-  const changeHangler = (e) => {
+  const displayHandler = (value) => {
+    setDisplay(value);
+  };
+
+  const powerHandler = () => {
+    setPower(!power);
+  };
+
+  const volumeHandler = (e) => {
     setVolume(e.target.value);
   };
 
@@ -82,34 +92,13 @@ export default function App() {
     <div className="App">
       <div id="drum-machine">
         <div id="ui-container">
-          <div id="title">Drum machine</div>
-          <div id="display">
-            {display}
-            <div className="status">
-              <span>{power ? "ON" : "OFF"}</span>
-              <span>vol: {volume}</span>
-            </div>
-          </div>
-          <div id="controls">
-            <div className="controls-volume">
-              <div className="slider-wrapper">
-                <input
-                  id="volume"
-                  type="range"
-                  orient="vertical"
-                  defaultValue={volume}
-                  onChange={changeHangler}
-                ></input>
-              </div>
-              <div>Vol</div>
-            </div>
-            <div className="controls-power">
-              <div className="btn" onClick={() => setPower(!power)}>
-                <div className="btn-inner"></div>
-              </div>
-              <div>Power</div>
-            </div>
-          </div>
+          <UserInterface
+            display={display}
+            powerState={power}
+            volumeLevel={volume}
+            onPowerClick={powerHandler}
+            onVolumeChange={volumeHandler}
+          />
         </div>
         <div id="drum-pads-container">
           {bank.map((item) => (
@@ -120,9 +109,9 @@ export default function App() {
               keyTrigger={item.keyTrigger}
               audioSrc={item.src}
               audioId={item.keyTrigger}
-              updateDisplay={(value) => setDisplay(value)}
-              powerControl={power}
-              volumeControl={volume}
+              updateDisplay={displayHandler}
+              powerState={power}
+              volumeLevel={volume}
             />
           ))}
         </div>

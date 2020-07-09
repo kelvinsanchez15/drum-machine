@@ -1,0 +1,81 @@
+#title {
+  // background-color: blanchedalmond;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.1em;
+  width: 30%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title-icon {
+  color: brown;
+  font-size: 1.7em;
+}
+
+#display {
+  font-family: "Orbitron", sans-serif;
+  background-color: rgb(165, 42, 42);
+  border: 3px solid black;
+  border-radius: 7px;
+  color: black;
+  height: 75%;
+  width: 40%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.status {
+  /* background-color: coral; */
+  display: flex;
+  justify-content: space-around;
+}
+
+#controls {
+  /* background-color: burlywood; */
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.controls-volume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider-wrapper input {
+  width: 40px;
+  height: 100px;
+  -webkit-appearance: none;
+  -webkit-appearance: slider-vertical;
+}
+
+.slider-wrapper input:hover {
+  cursor: pointer;
+}
+
+.controls-power {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn-wrapper:hover {
+  cursor: pointer;
+}
+
+.pwr-btn-on {
+  color: brown;
+  font-size: 2em;
+}
+
+.pwr-btn-off {
+  color: white;
+  font-size: 2em;
+}
