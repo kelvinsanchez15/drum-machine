@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Pad from "./components/Pad.js";
-import "./App.css";
+import "./App.scss";
 // Drumkit library imports
 import openHH from "./sounds/Open-HH.mp3";
 import crashCymbal from "./sounds/Crash-Cymbal.mp3";
