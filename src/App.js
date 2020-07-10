@@ -109,7 +109,6 @@ export default function App() {
               keyCode={item.keyCode}
               keyTrigger={item.keyTrigger}
               audioSrc={item.src}
-              audioId={item.keyTrigger}
               updateDisplay={displayHandler}
               powerState={power}
               volumeLevel={volume}

@@ -1,5 +1,4 @@
 #title {
-  // background-color: blanchedalmond;
   font-style: italic;
   font-weight: bold;
   font-size: 1.1em;
@@ -34,19 +33,19 @@
 }
 
 #status {
-  /* background-color: coral; */
   display: flex;
   justify-content: space-between;
   margin: 0 10px;
-  #status-volume {
-    height: 40%;
-    width: 60%;
-    text-align: left;
+  #status-volumen {
+    display: flex;
+    .volumen-icon {
+      font-size: 1.2em;
+      margin-right: 5px;
+    }
   }
 }
 
 #controls {
-  // background-color: burlywood;
   height: 75%;
   width: 30%;
   display: flex;
@@ -86,6 +85,6 @@
 }
 
 .pwr-btn-off {
-  color: white;
+  color: rgb(224, 224, 224);
   font-size: 2em;
 }

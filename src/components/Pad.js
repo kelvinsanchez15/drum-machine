@@ -2,26 +2,34 @@ import React, { useState, useEffect } from "react";
 import "./Pad.scss";
 import { CSSTransition } from "react-transition-group";
 
-export default function Pad(props) {
+export default function Pad({
+  padId,
+  keyCode,
+  keyTrigger,
+  audioSrc,
+  updateDisplay,
+  powerState,
+  volumeLevel,
+}) {
   const [fadeProp, setfadeProp] = useState(false);
 
   const playAudio = () => {
     // playAudio logic only runs when power is set to true
-    if (props.powerState) {
+    if (powerState) {
       // Get html audio element with a selector
-      const audio = document.getElementById(props.keyTrigger);
+      const audio = document.getElementById(keyTrigger);
       audio.currentTime = 0;
       audio.play();
-      audio.volume = props.volumeLevel / 100;
+      audio.volume = volumeLevel / 100;
       // Update display text
-      props.updateDisplay(props.padId);
+      updateDisplay(padId);
       // Apply fade transition
       setfadeProp(true);
     }
   };
 
-  const keyHandler = ({ keyCode }) => {
-    if (keyCode === props.keyCode) {
+  const keyHandler = (e) => {
+    if (e.keyCode === keyCode) {
       playAudio();
     }
   };
@@ -41,9 +49,9 @@ export default function Pad(props) {
       exit={false}
       classNames="fade"
     >
-      <div id={props.padId} className="drum-pad" onClick={playAudio}>
-        <audio id={props.audioId} className="clip" src={props.audioSrc}></audio>
-        {props.keyTrigger}
+      <div id={padId} className="drum-pad" onClick={playAudio}>
+        <audio id={keyTrigger} className="clip" src={audioSrc}></audio>
+        {keyTrigger}
       </div>
     </CSSTransition>
   );

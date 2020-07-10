@@ -1,8 +1,14 @@
 import React from "react";
 import "./UserInterface.scss";
-import { FaPowerOff, FaDrum } from "react-icons/fa";
+import { FaPowerOff, FaDrum, FaVolumeUp } from "react-icons/fa";
 
-export default function UserInterface(props) {
+export default function UserInterface({
+  display,
+  powerState,
+  volumeLevel,
+  onPowerClick,
+  onVolumeChange,
+}) {
   return (
     <>
       <div id="title">
@@ -12,12 +18,17 @@ export default function UserInterface(props) {
         </div>
       </div>
       <div id="display">
-        <div id="display-text">{props.display}</div>
+        <div id="display-text">{display}</div>
         <div id="status">
-          <span id="status-volume">
-            VOL : {props.powerState ? props.volumeLevel : ""}
-          </span>
-          <span>{props.powerState ? "ON" : "OFF"}</span>
+          <div id="status-volumen">
+            <div className="volumen-icon">
+              <FaVolumeUp />
+            </div>
+            {powerState ? `${volumeLevel}` : ""}
+          </div>
+          <div id="status-power">
+            <div>{powerState ? "ON" : "OFF"}</div>
+          </div>
         </div>
       </div>
       <div id="controls">
@@ -27,15 +38,15 @@ export default function UserInterface(props) {
               id="volume"
               type="range"
               orient="vertical"
-              defaultValue={props.volumeLevel}
-              onChange={props.onVolumeChange}
+              defaultValue={volumeLevel}
+              onChange={onVolumeChange}
             ></input>
           </div>
           <div>VOL</div>
         </div>
         <div className="controls-power">
-          <div className="btn-wrapper" onClick={props.onPowerClick}>
-            <div className={props.powerState ? "pwr-btn-on" : "pwr-btn-off"}>
+          <div className="btn-wrapper" onClick={onPowerClick}>
+            <div className={powerState ? "pwr-btn-on" : "pwr-btn-off"}>
               <FaPowerOff />
             </div>
           </div>
