@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Pad.scss";
+import { CSSTransition } from "react-transition-group";
 
 export default function Pad(props) {
+  const [fadeProp, setfadeProp] = useState(false);
+
   const playAudio = () => {
     // playAudio logic only runs when power is set to true
     if (props.powerState) {
@@ -12,6 +15,8 @@ export default function Pad(props) {
       audio.volume = props.volumeLevel / 100;
       // Update display text
       props.updateDisplay(props.padId);
+      // Apply fade transition
+      setfadeProp(true);
     }
   };
 
@@ -29,9 +34,17 @@ export default function Pad(props) {
   });
 
   return (
-    <div id={props.padId} className="drum-pad" onClick={playAudio}>
-      <audio id={props.audioId} className="clip" src={props.audioSrc}></audio>
-      {props.keyTrigger}
-    </div>
+    <CSSTransition
+      in={fadeProp}
+      timeout={100}
+      onEntered={() => setfadeProp(false)}
+      exit={false}
+      classNames="fade"
+    >
+      <div id={props.padId} className="drum-pad" onClick={playAudio}>
+        <audio id={props.audioId} className="clip" src={props.audioSrc}></audio>
+        {props.keyTrigger}
+      </div>
+    </CSSTransition>
   );
 }

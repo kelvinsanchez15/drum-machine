@@ -28,16 +28,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  #display-text {
+    height: 40%;
+  }
 }
 
-.status {
+#status {
   /* background-color: coral; */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 10px;
+  #status-volume {
+    height: 40%;
+    width: 60%;
+    text-align: left;
+  }
 }
 
 #controls {
-  /* background-color: burlywood; */
+  // background-color: burlywood;
+  height: 75%;
   width: 30%;
   display: flex;
   justify-content: space-around;
@@ -51,7 +61,7 @@
 
 .slider-wrapper input {
   width: 40px;
-  height: 100px;
+  height: 70px;
   -webkit-appearance: none;
   -webkit-appearance: slider-vertical;
 }

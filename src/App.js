@@ -72,9 +72,9 @@ const bank = [
 ];
 
 export default function App() {
-  const [display, setDisplay] = useState("Play");
+  const [display, setDisplay] = useState("PLAY ALONG !");
   const [power, setPower] = useState(true);
-  const [volume, setVolume] = useState(75);
+  const [volume, setVolume] = useState(35);
 
   const displayHandler = (value) => {
     setDisplay(value);
@@ -82,6 +82,7 @@ export default function App() {
 
   const powerHandler = () => {
     setPower(!power);
+    !power ? setDisplay("WELCOME BACK") : setDisplay("GOOD BYE!");
   };
 
   const volumeHandler = (e) => {

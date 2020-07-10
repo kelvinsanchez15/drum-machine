@@ -12,10 +12,12 @@ export default function UserInterface(props) {
         </div>
       </div>
       <div id="display">
-        {props.display}
-        <div className="status">
+        <div id="display-text">{props.display}</div>
+        <div id="status">
+          <span id="status-volume">
+            VOL : {props.powerState ? props.volumeLevel : ""}
+          </span>
           <span>{props.powerState ? "ON" : "OFF"}</span>
-          <span>vol: {props.volumeLevel}</span>
         </div>
       </div>
       <div id="controls">
@@ -29,7 +31,7 @@ export default function UserInterface(props) {
               onChange={props.onVolumeChange}
             ></input>
           </div>
-          <div>Vol</div>
+          <div>VOL</div>
         </div>
         <div className="controls-power">
           <div className="btn-wrapper" onClick={props.onPowerClick}>
@@ -37,7 +39,7 @@ export default function UserInterface(props) {
               <FaPowerOff />
             </div>
           </div>
-          <div>Power</div>
+          <div>POWER</div>
         </div>
       </div>
     </>
